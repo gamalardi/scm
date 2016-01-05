@@ -1,0 +1,29 @@
+/* =====================================
+ * Base Style
+ * ===================================== */
+
+$baseFont: 12pt;
+
+
+html {
+  font-size: $baseFont;
+}
+
+// commnent out for now
+// @include media-breakpoint-up(sm) {
+//   html {
+//     font-size: $baseFont + 2; //14px;
+//   }
+// }
+
+// @include media-breakpoint-up(md) {
+//   html {
+//     font-size: $baseFont + 8;
+//   }
+// }
+
+// @include media-breakpoint-up(lg) {
+//   html {
+//     font-size: 28px;
+//   }
+// }

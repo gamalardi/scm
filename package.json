@@ -1,0 +1,45 @@
+{
+  "name": "surya-citra-media",
+  "version": "1.0.0",
+  "description": "Website for PT. Surya Citra Media",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scmwebdev/scm.git"
+  },
+  "author": "Gamal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scmwebdev/scm/issues"
+  },
+  "homepage": "https://github.com/scmwebdev/scm#readme",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "browser-sync": "^2.10.1",
+    "del": "^2.2.0",
+    "font-awesome": "^4.5.0",
+    "gulp": "^3.9.0",
+    "gulp-cache": "^0.4.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-iconfont": "^5.0.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-useref": "^3.0.4",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "jquery": "^2.1.4",
+    "jshint": "^2.8.0",
+    "sass": "^0.5.0"
+  }
+}
