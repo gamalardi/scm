@@ -1,17 +1,17 @@
 @charset "UTF-8";
-/*
-  Theme Name: SCM
-  Theme URI:
-  Template: twentysixteen
-  Description: website for SCM
-  Author: Gamal Ardipratama
-  Author URI: http://gamalardi.com
-  Version: 1.0.0
-  License: GNU General Public License v2 or later
-  License URI: http://www.gnu.org/licenses/gpl-2.0.html
-  Tags: responsive-layout, bootstrap, 12-columns
-  Text Domain: scm-theme
-*/
+/*!
+ * Theme URI:
+ * Theme Name: SCM
+ * Template: twentysixteen
+ * Description: website for SCM
+ * Author: Gamal Ardipratama
+ * Author URI: http://gamalardi.com
+ * Version: 1.0.0
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Tags: responsive-layout, bootstrap, 12-columns
+ * Text Domain: scm-theme
+ */
 /* import vendor css -- */
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)

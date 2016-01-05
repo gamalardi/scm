@@ -46,6 +46,14 @@ gulp.task('concat-js', function () {
  	gulp.watch('./src/js/*.js', ['js']);
  });
 
+ gulp.task('build', function(){
+  return gulp.src(wpDest + 'scss/style.scss')
+		.pipe(plugins.plumber(plumberErrorHandler))
+		.pipe(plugins.sass())
+    .pipe(plugins.cssnano())
+    .pipe(plugins.rename({suffix: '.min'}))
+		.pipe(gulp.dest(wpDest))
+ })
 
 gulp.task('default', ['sass', 'js', 'watch'], function(){
 
