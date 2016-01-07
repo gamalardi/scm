@@ -42,7 +42,7 @@ gulp.task('concat-js', function () {
 
  gulp.task('watch',  function(){
  	plugins.livereload.listen();
- 	gulp.watch('./src/scss/main.scss', ['sass']);
+ 	gulp.watch('./src/scss/style.scss', ['sass']);
  	gulp.watch('./src/js/*.js', ['js']);
  });
 
