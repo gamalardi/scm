@@ -4,11 +4,11 @@
 			<img class="img-responsive" src="<?php echo get_stylesheet_directory_uri() . '/img/scm-logo-white.png'?>" alt="Surya Citra Media Logo">
 		</div>
 		<ul class="site-menu-list nav-pills nodots col-xs-10 col-md-8 col-lg-6">
-			<li><a href="">Beranda</a></li>
-			<li><a href="">Corporate</a></li>
-			<li><a href="">Investor Relation</a></li>
-			<li><a href="">Information</a></li>
-			<li><a href="">Activity</a></li>
+			<li><a href="/">Beranda</a></li>
+			<li><a href="corporate">Corporate</a></li>
+			<li><a href="investor-relation">Investor Relation</a></li>
+			<li><a href="information">Information</a></li>
+			<li><a href="activity">Activity</a></li>
 		</ul>
 	</div>	
 </nav>
