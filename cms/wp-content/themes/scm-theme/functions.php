@@ -36,3 +36,10 @@ add_theme_support( 'post-thumbnails' );
 add_filter('max_srcset_image_width', function($max_srcset_image_width, $size_array){
     return 2000;
 }, 10, 2);
+
+
+function scm_menu() {
+    include 'template/megamenu.php';
+}
+
+?>

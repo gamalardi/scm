@@ -1,10 +1,11 @@
 <?php include('header.php') ?>
-	<?php wp_nav_menu( array( 'theme_location' => 'megamenu' ) ); ?>
+	<?php wp_nav_menu(); ?>
 	<div class="page-wrap">
 		<div class="header">
 			<?php
 				if ( has_post_thumbnail() ) {
 					the_post_thumbnail('full', array('class' => 'img-responsive'));
+					echo 'there is thumbnails';
 				};
 			?>
 		</div>

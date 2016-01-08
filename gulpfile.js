@@ -42,16 +42,17 @@ gulp.task('concat-js', function () {
 
  gulp.task('watch',  function(){
  	plugins.livereload.listen();
- 	gulp.watch('./src/scss/style.scss', ['sass']);
- 	gulp.watch('./src/js/*.js', ['js']);
+ 	gulp.watch(wpDest + 'scss/**/*.scss', ['sass']);
+ 	gulp.watch(wpDest + 'scss/*.scss', ['sass']);
+ 	gulp.watch(wpDest + 'js/*.js', ['js']);
  });
 
  gulp.task('build', function(){
   return gulp.src(wpDest + 'scss/style.scss')
 		.pipe(plugins.plumber(plumberErrorHandler))
 		.pipe(plugins.sass())
-    .pipe(plugins.cssnano())
-    .pipe(plugins.rename({suffix: '.min'}))
+	    .pipe(plugins.cssnano())
+	    .pipe(plugins.rename({suffix: '.min'}))
 		.pipe(gulp.dest(wpDest))
  })
 

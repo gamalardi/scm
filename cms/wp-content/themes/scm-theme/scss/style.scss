@@ -1,6 +1,6 @@
 /*!
- * Theme URI:
  * Theme Name: SCM
+ * Theme URI: http://www.example.com (Your child theme's URL)
  * Template: bizlight
  * Description: SCM theme based on bizlight theme
  * Author: Gamal Ardipratama
@@ -13,6 +13,8 @@
  */
 
 /* import vendor css -- */
+@import url(../bizlight/style.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic);
 @import './node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
 @import '_vendor/animate';
 
@@ -20,3 +22,8 @@
 /* include project css -- */
 // @import var; comment out for now
 @import 'base';
+@import '_partial/kodein';
+@import '_vendor/animate';
+
+/* SCM Theme -- */
+@import '_module/page';

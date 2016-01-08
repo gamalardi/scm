@@ -2,11 +2,11 @@
  * Base Style
  * ===================================== */
 
-$baseFont: 12pt;
+@import 'var';
 
-
-html {
-  font-size: $baseFont;
+html, body {
+  font-size: $baseFontSize;
+  font-family: $baseFont;
 }
 
 // commnent out for now

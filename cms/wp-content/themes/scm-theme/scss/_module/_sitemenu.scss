@@ -1,0 +1,29 @@
+/*
+ * Site Menu SCSS
+ */
+
+.site-menu {
+    &-logo {
+        img {
+            width: 150px;
+        }
+    }
+}
+
+.site-menu-list {
+    color: #fff;
+    margin-bottom: 0;
+    li {
+    	padding: 15px;
+    	border-radius: 10%;
+    	background-color: $second-color;
+    }
+    a {
+        color: #fff;
+    }
+}
+
+
+.page-wrap .navbar-fixed-active {
+	background-color: $main-color !important;
+}
