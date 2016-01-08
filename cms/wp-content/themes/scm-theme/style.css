@@ -10588,12 +10588,9 @@ Copyright (c) 2015 Daniel Eden
 .site-menu-list {
   color: #fff;
   margin-bottom: 0; }
-  .site-menu-list li {
-    padding: 15px;
-    border-radius: 10%;
-    background-color: #de693b; }
   .site-menu-list a {
+    padding: 15px;
     color: #fff; }
-
-.page-wrap .navbar-fixed-active {
-  background-color: #3b3d70 !important; }
+    .site-menu-list a:hover, .site-menu-list a.active {
+      background-color: #3b3d70;
+      text-decoration: none !important; }

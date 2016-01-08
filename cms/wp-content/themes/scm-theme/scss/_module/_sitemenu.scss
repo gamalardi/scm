@@ -13,17 +13,17 @@
 .site-menu-list {
     color: #fff;
     margin-bottom: 0;
-    li {
-    	padding: 15px;
-    	border-radius: 10%;
-    	background-color: $second-color;
-    }
     a {
+    	padding: 15px;
         color: #fff;
+        &:hover, &.active {
+        	background-color: $main-color;
+        	text-decoration: none !important;
+        }
     }
 }
 
 
-.page-wrap .navbar-fixed-active {
-	background-color: $main-color !important;
-}
+// .page-wrap .navbar-fixed-active {
+// 	background-color: $main-color !important;
+// }
