@@ -13,6 +13,7 @@
 .site-menu-list {
     color: #fff;
     margin-bottom: 0;
+    @include nosides(padding);
     a {
     	padding: 15px;
         color: #fff;

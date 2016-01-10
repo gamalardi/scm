@@ -10587,7 +10587,9 @@ Copyright (c) 2015 Daniel Eden
 
 .site-menu-list {
   color: #fff;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0; }
   .site-menu-list a {
     padding: 15px;
     color: #fff; }
