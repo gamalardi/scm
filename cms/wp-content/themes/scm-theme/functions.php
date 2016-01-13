@@ -41,5 +41,8 @@ add_filter('max_srcset_image_width', function($max_srcset_image_width, $size_arr
 function scm_menu() {
     include 'template/megamenu.php';
 }
+function scm_sidebar() {
+    include 'template/sidebar.php';
+}
 
 ?>

@@ -1,0 +1,26 @@
+/*
+ * Corporate Page SCSS
+ */
+
+// .about-us {
+//     max-width: 992px;
+//     margin: 0 auto;
+//     p {
+//         text-align: center;
+//         @media (max-width: 768px) {
+//             &:not(: first-of-type) {
+//                 display: none;
+//             }
+//         }
+//     }
+// }
+
+#corporate {
+
+    //use for to create h1 to h4 and remove the margin bottom for each of them
+    @for $i from 1 through 4 {
+        h#{$i} {
+            margin-bottom: 0;
+        }
+    }
+}

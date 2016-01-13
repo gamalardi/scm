@@ -10637,3 +10637,18 @@ Copyright (c) 2015 Daniel Eden
     @media (max-width: 768px) {
       #beranda .about-us p:not(:first-of-type) {
         display: none; } }
+
+/*
+ * Corporate Page SCSS
+ */
+#corporate h1 {
+  margin-bottom: 0; }
+
+#corporate h2 {
+  margin-bottom: 0; }
+
+#corporate h3 {
+  margin-bottom: 0; }
+
+#corporate h4 {
+  margin-bottom: 0; }

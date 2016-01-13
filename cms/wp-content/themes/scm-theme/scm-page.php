@@ -8,7 +8,7 @@
 	get_header();
 ?>
 
-<div class="main-wrap" id="">
+<div class="main-wrap" id="<?php echo strtolower(get_the_title()); ?>">
     <div class="content">
         <div class="main-banner">
             <div class="main featured-image">
@@ -21,18 +21,18 @@
                 } ?>
             </div>
         </div>
-        <div class="user-content" id="<?php echo strtolower(get_the_title()); ?>">
-            <div class="container spacemar">
-                    <!-- <h2 class="content-title text-center"><?php echo get_the_title(); ?></h2> -->
+        <div class="container-fluid">
+            <div class="scm-sidebar col-xs-3">
+                <?php scm_sidebar(); ?>
+            </div>
+            <div class="user-content col-xs-9">
+                <div class="">
                     <div class="user-post">
-                         <!-- call this function to get content from wp -->
                         <?php echo get_post_field('post_content', $post->ID, 'raw'); ?>
                     </div>
-
-                    
                 </div>
-
             </div>
+        </div>
     </div>
 </div>
 
