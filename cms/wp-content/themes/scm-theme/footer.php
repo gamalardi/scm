@@ -4,51 +4,40 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package eVision themes
- * @subpackage Bizlight
- * @since Bizlight 1.0.0
+ * @package sparkling
  */
-
-/**
- * bizlight_action_after_content hook
- * @since Bizlight 1.0.0
- *
- * @hooked null
- */
-do_action( 'bizlight_action_after_content' );
-
-/**
- * bizlight_action_before_footer hook
- * @since Bizlight 1.0.0
- *
- * @hooked null
- */
-do_action( 'bizlight_action_before_footer' );
-
-/**
- * bizlight_action_footer hook
- * @since Bizlight 1.0.0
- *
- * @hooked bizlight_footer - 10
- */
-do_action( 'bizlight_action_footer' );
-
-/**
- * bizlight_action_after_footer hook
- * @since Bizlight 1.0.0
- *
- * @hooked null
- */
-do_action( 'bizlight_action_after_footer' );
-
-/**
- * bizlight_action_after hook
- * @since Bizlight 1.0.0
- *
- * @hooked bizlight_page_end - 10
- */
-do_action( 'bizlight_action_after' );
 ?>
+		</div><!-- close .row -->
+	</div><!-- close .container -->
+</div><!-- close .site-content -->
+
+	<div id="footer-area">
+		<div class="container footer-inner">
+			<div class="row">
+				<?php get_sidebar( 'footer' ); ?>
+			</div>
+		</div>
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info container">
+				<div class="row">
+					<?php if( of_get_option('footer_social') ) sparkling_social_icons(); ?>
+					<nav role="navigation" class="col-md-6">
+						<?php sparkling_footer_links(); ?>
+					</nav>
+					<div class="copyright col-md-6">
+						<?php //echo of_get_option( 'custom_footer_text', 'sparkling' ); ?>
+						<?php //sparkling_footer_info(); ?>
+						Copyright ©2002-2016 PT. Surya Citra Media Tbk. All Rights Reserved
+					</div>
+				</div>
+			</div><!-- .site-info -->
+			<div class="scroll-to-top"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+		</footer><!-- #colophon -->
+	</div>
+</div><!-- #page -->
+
 <?php wp_footer(); ?>
+
 </body>
 </html>

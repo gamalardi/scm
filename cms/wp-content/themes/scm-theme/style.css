@@ -21,6 +21,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -8169,6 +8170,9 @@ html, body {
   font-size: 12pt;
   font-family: "Roboto Condensed", sans-serif; }
 
+.scroll-to-top:hover {
+  background: #3b3d70; }
+
 /* *********************************** */
 /* Utility class */
 /* *********************************** */
@@ -10582,17 +10586,54 @@ Copyright (c) 2015 Daniel Eden
 /*
  * Site Menu SCSS
  */
-.site-menu-logo img {
-  width: 150px; }
-
-.site-menu-list {
-  color: #fff;
-  margin-bottom: 0;
+#logo {
+  max-width: 80px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 0;
   padding-right: 0; }
-  .site-menu-list a {
-    padding: 15px;
-    color: #fff; }
-    .site-menu-list a:hover, .site-menu-list a.active {
+
+.scm.site-header {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .scm.site-header {
+      position: absolute; } }
+  .scm.site-header .navbar-default {
+    border: none;
+    background-color: black; }
+    @media (max-width: 768px) {
+      .scm.site-header .navbar-default {
+        padding-top: 8px;
+        padding-bottom: 8px; } }
+    @media (min-width: 768px) {
+      .scm.site-header .navbar-default {
+        background-color: rgba(0, 0, 0, 0.5); } }
+    .scm.site-header .navbar-default .navbar-nav li a {
+      color: #fff;
+      padding-top: 10px;
+      padding-bottom: 10px; }
+      .scm.site-header .navbar-default .navbar-nav li a:hover {
+        background-color: #3b3d70;
+        text-decoration: none !important; }
+    .scm.site-header .navbar-default .navbar-nav li.active a {
       background-color: #3b3d70;
       text-decoration: none !important; }
+    .scm.site-header .navbar-default .dropdown-menu {
+      border: none; }
+      .scm.site-header .navbar-default .dropdown-menu a {
+        background-color: #000; }
+
+.main-content-area {
+  margin: 0; }
+
+/*
+ * Beranda(index) Page SCSS
+ */
+#beranda .about-us {
+  max-width: 992px;
+  margin: 0 auto; }
+  #beranda .about-us p {
+    text-align: center; }
+    @media (max-width: 768px) {
+      #beranda .about-us p:not(:first-of-type) {
+        display: none; } }

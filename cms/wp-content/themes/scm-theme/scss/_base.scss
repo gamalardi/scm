@@ -9,6 +9,9 @@ html, body {
   font-family: $baseFont;
 }
 
+.scroll-to-top:hover {
+	background: $main-color;
+}
 // commnent out for now
 // @include media-breakpoint-up(sm) {
 //   html {

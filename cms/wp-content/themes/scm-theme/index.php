@@ -1,5 +1,6 @@
 <?php include('header.php') ?>
 	<?php wp_nav_menu(); ?>
+
 	<div class="page-wrap">
 		<div class="header">
 			<?php
@@ -8,8 +9,11 @@
 				};
 			?>
 		</div>
+
 		<div class="content">
+
 			<?php echo get_post_field('post_content', $post->ID, 'raw'); ?>
+
 		</div>
 		<div class="footer"></div>
 	</div>

@@ -2,29 +2,51 @@
  * Site Menu SCSS
  */
 
-.site-menu {
-    &-logo {
-        img {
-            width: 150px;
+$defaultSpacing: 5px;
+#logo {
+    max-width: 80px;
+    @include spacepad-nosides($defaultSpacing);
+}
+
+.scm.site-header {
+    @media(min-width: 768px) {
+        position: absolute;
+    }
+    width: 100%;
+    .navbar-default {
+        border: none; //remove border
+        background-color: rgba(0, 0, 0, 1);
+        @media(max-width: 768px) {
+            @include spacepad(8px);
+        }
+        @media(min-width: 768px) {
+            background-color: rgba(0, 0, 0, 0.5); //make the background transparent
+        }
+        .navbar-nav li a {
+            color: #fff;
+            // border-radius: 5px;
+            padding-top: $defaultSpacing * 2;
+            padding-bottom: $defaultSpacing * 2;
+            &:hover {
+                background-color: $main-color;
+                text-decoration: none !important;
+            }
+        }
+        .navbar-nav li.active a {
+            background-color: $main-color;
+            text-decoration: none !important;
+        }
+
+        //child menu
+        .dropdown-menu {
+            border: none;
+            a {
+                background-color: #000;
+            }
         }
     }
 }
 
-.site-menu-list {
-    color: #fff;
-    margin-bottom: 0;
-    @include nosides(padding);
-    a {
-    	padding: 15px;
-        color: #fff;
-        &:hover, &.active {
-        	background-color: $main-color;
-        	text-decoration: none !important;
-        }
-    }
+.main-content-area {
+    margin: 0;
 }
-
-
-// .page-wrap .navbar-fixed-active {
-// 	background-color: $main-color !important;
-// }
