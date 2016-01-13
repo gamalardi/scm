@@ -22,10 +22,10 @@ function theme_js() {
 }
 
 //register template menu
-function register_my_menu() {
-  register_nav_menu('megamenu',__( 'megamenu' ));
-}
-add_action( 'init', 'register_my_menu' );
+// function register_my_menu() {
+//   register_nav_menu('megamenu',__( 'megamenu' ));
+// }
+// add_action( 'init', 'register_my_menu' );
 
 // enable featured image on pages/posts
 add_theme_support( 'post-thumbnails' );

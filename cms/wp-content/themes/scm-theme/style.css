@@ -2,7 +2,7 @@
 /*!
  * Theme Name: SCM
  * Theme URI: http://www.example.com (Your child theme's URL)
- * Template: bizlight
+ * Template: sparkling
  * Description: SCM theme based on bizlight theme
  * Author: Gamal Ardipratama
  * Author URI: http://gamalardi.com
@@ -13,7 +13,7 @@
  * Text Domain: scm-theme
  */
 /* import vendor css -- */
-@import url(../bizlight/style.css);
+@import url(../sparkling/style.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,400italic);
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
