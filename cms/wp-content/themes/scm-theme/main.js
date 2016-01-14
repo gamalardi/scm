@@ -9247,7 +9247,9 @@ function getSidebar() {
         and wrap it in a variable called text */
         var modifiedText = $(this).text().toLowerCase().replace(/ /g, '-').replace(/&/i, 'and');
 
+        // add each h2 with an id with its own modified text
         $(this).attr('id', modifiedText);
+        // dynamically insert a sidebar menu based on h2 classes in user post
         sidebar.find('nav > ul').append('<li><a href="'+ modifiedText +'"> '+ text +'</a></li>');
     });
     
