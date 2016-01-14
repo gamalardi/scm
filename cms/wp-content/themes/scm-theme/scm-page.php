@@ -21,7 +21,7 @@
                 } ?>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="page-content container-fluid">
             <?php scm_sidebar();?>
             <div class="user-content col-xs-12">
                 <div class="">

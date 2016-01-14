@@ -1,0 +1,11 @@
+/*
+ * sidebar scss
+ */
+
+.scm-sidebar {
+	nav {
+		li {
+			@include spacepad(5px);
+		}
+	}
+}
