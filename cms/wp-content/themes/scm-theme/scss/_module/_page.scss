@@ -6,3 +6,10 @@
 @import 'sitefooter';
 @import 'template/index-page';
 @import 'template/corporate';
+
+
+@for $i from 1 through 4 {
+    h#{$i} {
+        margin-bottom: 5px;
+    }
+}

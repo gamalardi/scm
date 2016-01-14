@@ -22,10 +22,8 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="scm-sidebar col-xs-3">
-                <?php scm_sidebar(); ?>
-            </div>
-            <div class="user-content col-xs-9">
+            <?php scm_sidebar();?>
+            <div class="user-content col-xs-12">
                 <div class="">
                     <div class="user-post">
                         <?php echo get_post_field('post_content', $post->ID, 'raw'); ?>

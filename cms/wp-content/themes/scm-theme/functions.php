@@ -42,7 +42,13 @@ function scm_menu() {
     include 'template/megamenu.php';
 }
 function scm_sidebar() {
-    include 'template/sidebar.php';
+    $scmUrl = array('corporate', 'investor-relation', 'information', 'activity');
+    foreach ($scmUrl as $url) {
+        if ( $_SERVER['REQUEST_URI'] == '/scm/'. $url .'/' ) {
+             //run the query to list the pros
+            include 'template/sidebar.php';
+        }
+    }
 }
 
 ?>

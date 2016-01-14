@@ -10641,14 +10641,14 @@ Copyright (c) 2015 Daniel Eden
 /*
  * Corporate Page SCSS
  */
-#corporate h1 {
-  margin-bottom: 0; }
+h1 {
+  margin-bottom: 5px; }
 
-#corporate h2 {
-  margin-bottom: 0; }
+h2 {
+  margin-bottom: 5px; }
 
-#corporate h3 {
-  margin-bottom: 0; }
+h3 {
+  margin-bottom: 5px; }
 
-#corporate h4 {
-  margin-bottom: 0; }
+h4 {
+  margin-bottom: 5px; }

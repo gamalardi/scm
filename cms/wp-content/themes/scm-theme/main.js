@@ -9215,9 +9215,6 @@ return jQuery;
 
 // if the child menu is hovered, the parent should be highlighted as well
 function highlightParent() {
-    // $('.dropdown-menu').hover(function() {
-    //     $(this).parent().addClass('active');
-    // })
     $('.dropdown-menu').hover(
     	function() {
     		$(this).parent().addClass('active');
@@ -9226,9 +9223,40 @@ function highlightParent() {
     });
 }
 
+// if sidebar exists add .col-sm-9 on .user-content otherwise remove it
+function scmSidebar() {
+    var sidebar = $('.scm-sidebar');
+    var userContent = $('.user-content');
+    if (sidebar.length) {
+        userContent.addClass('col-sm-9')
+    } else {
+        userContent.removeClass('col-sm-9')
+    }
+    getSidebar();
+}
+function getSidebar() {
+    var target = $('.user-post > h2');
+    var sidebar = $('.scm-sidebar');
+    var sidebarMenu = [];
+    // var text = target.text();
+    target.each(function(index, element){
+        // get the text
+        var text = $(this).text();
+
+        /* get the text => make it lowercase => replace space with - => replace & with and
+        and wrap it in a variable called text */
+        var modifiedText = $(this).text().toLowerCase().replace(/ /g, '-').replace(/&/i, 'and');
+
+        $(this).attr('id', modifiedText);
+        sidebar.find('nav > ul').append('<li><a href="'+ modifiedText +'"> '+ text +'</a></li>');
+    });
+    
+}
+
 $(document).ready(function() {
 
     highlightParent();
+    scmSidebar();
 
 });
 
