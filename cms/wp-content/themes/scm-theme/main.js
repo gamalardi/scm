@@ -9250,7 +9250,7 @@ function getSidebar() {
         // add each h2 with an id with its own modified text
         $(this).attr('id', modifiedText);
         // dynamically insert a sidebar menu based on h2 classes in user post
-        sidebar.find('nav > ul').append('<li><a href="'+ modifiedText +'"> '+ text +'</a></li>');
+        sidebar.find('nav > ul').append('<li><a href="#'+ modifiedText +'"> '+ text +'</a></li>');
     });
     
 }
