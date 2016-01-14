@@ -14,3 +14,9 @@
         margin-top: 10px;
     }
 }
+.page-content {
+	@media(max-width: 768px) {
+		@include nosides(padding);
+		margin: .5em 0 0;
+	}
+}

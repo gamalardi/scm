@@ -5,7 +5,16 @@
 .scm-sidebar {
 	nav {
 		li {
-			@include spacepad(5px);
+			@include nosides(padding);
+			a {
+				@extend .col-xs-12;
+				@include spacepad(5px);
+				&:hover, &:focus {
+					background: $main-color;
+					color: #fff;
+					text-decoration: none !important;
+				}
+			}
 		}
 	}
 }
