@@ -9248,7 +9248,6 @@ function getSidebar() {
         /* get the text => make it lowercase => replace space with - => replace & with and
         and wrap it in a variable called text */
         var modifiedText = $(this).text().toLowerCase().replace(/ /g, '-').replace(/&/i, 'and');
-
         // add each h2 with an id with its own modified text
         $(this).attr('id', modifiedText);
         // dynamically insert a sidebar menu based on h2 classes in user post
@@ -9283,11 +9282,26 @@ function niceScroll() {
     });
 }
 
+function smoothScroll() {
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+}
 
 $(document).ready(function() {
 
     highlightParent();
     scmSidebar();
+    smoothScroll();
 
 });
 
