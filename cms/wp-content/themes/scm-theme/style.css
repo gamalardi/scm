@@ -8166,12 +8166,18 @@ Copyright (c) 2015 Daniel Eden
  */
 /* color */
 /* font */
-html, body {
+html,
+body {
   font-size: 12pt;
   font-family: "Roboto Condensed", sans-serif; }
 
-.scroll-to-top:hover {
-  background: #3b3d70; }
+/* change the position of to left side 
+and change the color when hover */
+.scroll-to-top {
+  right: 0;
+  left: 40px; }
+  .scroll-to-top:hover {
+    background: #3b3d70; }
 
 /* *********************************** */
 /* Utility class */
@@ -10671,8 +10677,10 @@ h4 {
   margin-bottom: 10px;
   margin-top: 10px; }
 
-@media (max-width: 768px) {
-  .page-content {
-    padding-left: 0;
-    padding-right: 0;
-    margin: .5em 0 0; } }
+.page-content {
+  margin: 1.5em 0; }
+  @media (max-width: 768px) {
+    .page-content {
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0.5em 0; } }
