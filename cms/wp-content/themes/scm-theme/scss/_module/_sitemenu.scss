@@ -32,18 +32,33 @@ $defaultSpacing: 5px;
                 text-decoration: none !important;
             }
         }
-        .navbar-nav li.active a {
-            background-color: $main-color;
-            text-decoration: none !important;
-        }
-
-        //child menu
-        .dropdown-menu {
-            border: none;
+        .navbar-nav li.active {
             a {
-                background-color: #000;
+                background-color: $main-color;
+                text-decoration: none !important;
+            }
+            //child menu
+            .dropdown-menu {
+                border: none;
+                a {
+                    background-color: #000;
+                    &:hover {
+                        background-color: $main-color;
+                        text-decoration: none !important;
+                    }
+                }
             }
         }
+        .dropdown-menu {
+                border: none;
+                a {
+                    background-color: #000;
+                    &:hover {
+                        background-color: $main-color;
+                        text-decoration: none !important;
+                    }
+                }
+            }
     }
 }
 

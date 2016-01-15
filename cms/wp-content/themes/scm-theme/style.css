@@ -10624,10 +10624,20 @@ Copyright (c) 2015 Daniel Eden
     .scm.site-header .navbar-default .navbar-nav li.active a {
       background-color: #3b3d70;
       text-decoration: none !important; }
+    .scm.site-header .navbar-default .navbar-nav li.active .dropdown-menu {
+      border: none; }
+      .scm.site-header .navbar-default .navbar-nav li.active .dropdown-menu a {
+        background-color: #000; }
+        .scm.site-header .navbar-default .navbar-nav li.active .dropdown-menu a:hover {
+          background-color: #3b3d70;
+          text-decoration: none !important; }
     .scm.site-header .navbar-default .dropdown-menu {
       border: none; }
       .scm.site-header .navbar-default .dropdown-menu a {
         background-color: #000; }
+        .scm.site-header .navbar-default .dropdown-menu a:hover {
+          background-color: #3b3d70;
+          text-decoration: none !important; }
 
 .main-content-area {
   margin: 0; }
