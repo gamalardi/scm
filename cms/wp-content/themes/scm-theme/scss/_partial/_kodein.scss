@@ -53,6 +53,12 @@ ul.nodots > li {
 .fullwidth {
 	width: 100%;
 }
+.on {
+	display: block;
+}
+.off {
+	display: none;
+}
 /* **************** Truncate Function CSS **************** */
 .truncate-text.collapsed .dot .more,
 .truncate-text.expanded .ad-text,

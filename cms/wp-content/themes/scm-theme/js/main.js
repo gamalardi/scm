@@ -86,10 +86,21 @@ function smoothScroll() {
     });
 }
 
+function megamenuMobile() {
+    var windowWidth = $(window).width();
+    if (windowWidth < 768) {
+        $('.navbar-nav li a').click(function() {
+            $(this).parent().find('.dropdown-menu').toggleClass('on');
+        });
+    }
+}
+
 $(document).ready(function() {
 
-    highlightParent();
-    scmSidebar();
-    smoothScroll();
+    FastClick.attach(document.body);
+    highlightParent(); 
+    scmSidebar(); // dynamically insert sidebar menu
+    smoothScroll(); // enable smooth scrolling when clicked
+    megamenuMobile();
 
 });

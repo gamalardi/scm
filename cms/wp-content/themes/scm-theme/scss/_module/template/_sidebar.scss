@@ -3,18 +3,20 @@
  */
 
 .scm-sidebar {
-	nav {
-		li {
-			@include nosides(padding);
-			a {
-				@extend .col-xs-12;
-				@include spacepad(5px);
-				&:hover, &:focus {
-					background: $main-color;
-					color: #fff;
-					text-decoration: none !important;
-				}
-			}
-		}
-	}
+    nav {
+        li {
+            @include nosides(padding);
+            a {
+                @extend .col-xs-12;
+                padding: 5px 10px;
+                display: block;
+                &:hover,
+                &:focus {
+                    background: $main-color;
+                    color: #fff;
+                    text-decoration: none !important;
+                }
+            }
+        }
+    }
 }
