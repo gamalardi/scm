@@ -3,28 +3,33 @@
  * ===================================== */
 
 @import 'var';
-
-html, body {
-  font-size: $baseFontSize;
-  font-family: $baseFont;
+html,
+body {
+    font-size: $baseFontSize;
+    font-family: $baseFont;
 }
 
-.scroll-to-top:hover {
-	background: $main-color;
+/* change the position of to left side 
+and change the color when hover */
+.scroll-to-top {
+	right: 0;
+	left: 40px;
+    &:hover {
+        background: $main-color;
+    }
 }
+
 // commnent out for now
 // @include media-breakpoint-up(sm) {
 //   html {
 //     font-size: $baseFont + 2; //14px;
 //   }
 // }
-
 // @include media-breakpoint-up(md) {
 //   html {
 //     font-size: $baseFont + 8;
 //   }
 // }
-
 // @include media-breakpoint-up(lg) {
 //   html {
 //     font-size: 28px;

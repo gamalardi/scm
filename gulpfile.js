@@ -24,7 +24,8 @@ gulp.task('sass', function(){
 gulp.task('js', function(){
 	return gulp.src([
 			wpDest + '/js/*.js',
-			basePath + '/bootstrap-sass/assets/javascripts/bootstrap.js'
+			basePath + '/bootstrap-sass/assets/javascripts/bootstrap.js',
+			basePath + '/fastclick/lib/fastclick.js'
 		])
 		// .pipe(plugins.jshint())
 		// .pipe(plugins.jshint.reporter('fail'))
