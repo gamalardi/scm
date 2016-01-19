@@ -45,7 +45,16 @@ function scm_language() {
     include 'template/language.php';
 }
 function scm_sidebar() {
-    $scmUrl_en = array('corporate', 'investor-relation', 'information', 'activity');
+    $scmUrl_en = array(
+            '',
+            'corporate-governance', 
+            'investor-relation', 
+            'general-information', 
+            'activity', 
+            'investor-relation/general-meeting-of-share-holders',
+            'investor-relation/financial-information',
+            'investor-relation/annual-report',
+            'investor-relation/investor-materials');
 
     foreach ($scmUrl_en as $url) {
         if (( $_SERVER['REQUEST_URI'] == '/scm/'. $url .'/' ) || ($_SERVER['REQUEST_URI'] == '/scm/id/'. $url .'/' )) {

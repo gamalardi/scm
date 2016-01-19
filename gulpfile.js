@@ -57,6 +57,9 @@ gulp.task('concat-js', function () {
 		.pipe(gulp.dest(wpDest))
  })
 
+gulp.task('webserver', function() {
+	  plugins.connect.server();
+	});
 gulp.task('default', ['sass', 'js', 'watch'], function(){
 
     console.log('Start Gulp Tasks')
