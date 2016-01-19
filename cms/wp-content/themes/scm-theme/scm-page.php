@@ -22,11 +22,18 @@
             </div>
         </div>
         <div class="page-content container-fluid">
-            <?php scm_sidebar();?>
+             <?php scm_sidebar(); ?>
             <div class="user-content col-xs-12">
+
                 <div class="">
+
                     <div class="user-post">
-                        <?php echo get_post_field('post_content', $post->ID, 'raw'); ?>
+
+                        <?php while ( have_posts() ) : the_post(); ?>
+
+                            <?php the_content(); ?>
+
+                        <?php endwhile; // end of the loop. ?>
                     </div>
                 </div>
             </div>

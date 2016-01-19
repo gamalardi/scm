@@ -4852,6 +4852,18 @@ Copyright (c) 2015 Daniel Eden
 /*
  * Corporate Page SCSS
  */
+.content[data-lang="en"] .scm-sidebar ul li[data-lang="en"], .content[data-lang="en"] .user-post-content[name="en"] {
+  display: block; }
+
+.content[data-lang="en"] .scm-sidebar ul li[data-lang="id"], .content[data-lang="en"] .user-post-content[name="id"] {
+  display: none; }
+
+.content[data-lang="id"] .scm-sidebar ul li[data-lang="id"], .content[data-lang="id"] .user-post-content[name="id"] {
+  display: block; }
+
+.content[data-lang="id"] .scm-sidebar ul li[data-lang="en"], .content[data-lang="id"] .user-post-content[name="en"] {
+  display: none; }
+
 /*
  * sidebar scss
  */
@@ -4883,9 +4895,23 @@ h4 {
   margin-top: 10px; }
 
 .page-content {
-  margin: 1.5em 0; }
+  margin: 1.2em 0; }
   @media (max-width: 768px) {
     .page-content {
       padding-left: 0;
       padding-right: 0;
       margin: 0.5em 0; } }
+
+#choose-language {
+  text-align: right; }
+  #choose-language span {
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 5px 15px;
+    color: #000; }
+    #choose-language span:nth-child(2) {
+      padding: 5px; }
+    #choose-language span:hover, #choose-language span:active, #choose-language span:focus, #choose-language span.active {
+      color: #fff;
+      background: #3b3d70;
+      text-decoration: none !important; }

@@ -2,19 +2,19 @@
  * Corporate Page SCSS
  */
 
-// .about-us {
-//     max-width: 992px;
-//     margin: 0 auto;
-//     p {
-//         text-align: center;
-//         @media (max-width: 768px) {
-//             &:not(: first-of-type) {
-//                 display: none;
-//             }
-//         }
-//     }
-// }
-
-#corporate {
-
+.content[data-lang="en"] {
+    .scm-sidebar ul li[data-lang="en"], .user-post-content[name="en"] {
+        display: block;
+    }
+    .scm-sidebar ul li[data-lang="id"], .user-post-content[name="id"] {
+        display: none;
+    }
+}
+.content[data-lang="id"] {
+    .scm-sidebar ul li[data-lang="id"], .user-post-content[name="id"] {
+        display: block;
+    }
+    .scm-sidebar ul li[data-lang="en"], .user-post-content[name="en"] {
+        display: none;
+    }
 }

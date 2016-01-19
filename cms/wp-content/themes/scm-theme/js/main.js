@@ -26,16 +26,13 @@ function scmSidebar() {
 }
 
 function getSidebar() {
-    var target = $('.user-post > h2');
-    var sidebar = $('.scm-sidebar');
-    var sidebarMenu = [];
-    // var text = target.text();
-    target.each(function(index, element) {
-        // get the text
-        var text = $(this).text();
 
-        /* get the text => make it lowercase => replace space with - => replace & with and
-        and wrap it in a variable called text */
+    var sidebar = $('.scm-sidebar');
+    var target = $('.user-post h2');
+    target.each(function(index, element) {
+        var text = $(this).text();
+        /*get the text => make it lowercase => replace space with - => replace & with and
+        and wrap it in a variable called text  */
         var modifiedText = $(this).text().toLowerCase().replace(/ /g, '-').replace(/&/i, 'and');
         // add each h2 with an id with its own modified text
         $(this).attr('id', modifiedText);
@@ -44,6 +41,7 @@ function getSidebar() {
     });
 
 }
+
 
 // not being used atm
 function niceScroll() {
@@ -98,7 +96,8 @@ function megamenuMobile() {
 $(document).ready(function() {
 
     FastClick.attach(document.body);
-    highlightParent(); 
+    
+    highlightParent();
     scmSidebar(); // dynamically insert sidebar menu
     smoothScroll(); // enable smooth scrolling when clicked
     megamenuMobile();

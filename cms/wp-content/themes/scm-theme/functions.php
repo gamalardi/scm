@@ -41,10 +41,14 @@ add_filter('max_srcset_image_width', function($max_srcset_image_width, $size_arr
 function scm_menu() {
     include 'template/megamenu.php';
 }
+function scm_language() {
+    include 'template/language.php';
+}
 function scm_sidebar() {
-    $scmUrl = array('corporate', 'investor-relation', 'information', 'activity');
-    foreach ($scmUrl as $url) {
-        if ( $_SERVER['REQUEST_URI'] == '/scm/'. $url .'/' ) {
+    $scmUrl_en = array('corporate', 'investor-relation', 'information', 'activity');
+
+    foreach ($scmUrl_en as $url) {
+        if (( $_SERVER['REQUEST_URI'] == '/scm/'. $url .'/' ) || ($_SERVER['REQUEST_URI'] == '/scm/id/'. $url .'/' )) {
              //run the query to list the pros
             include 'template/sidebar.php';
         }
