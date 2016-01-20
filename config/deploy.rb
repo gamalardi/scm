@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'suryacitramedia'
-set :repo_url, 'git@github.com:scmwebdev/indosiar21v2.git'
+set :repo_url, 'https://github.com/scmwebdev/scm.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
