@@ -42,6 +42,11 @@ class WPGlobus {
 	const PAGE_WPGLOBUS_ADDONS = 'wpglobus-addons';
 
 	/**
+	 * WPGlobus clean page
+	 */
+	const PAGE_WPGLOBUS_CLEAN = 'wpglobus-clean';	
+	
+	/**
 	 * List navigation menus
 	 * @var array
 	 */
@@ -164,12 +169,22 @@ class WPGlobus {
 		}
 
 		if ( defined( 'WC_VERSION' ) || defined( 'WOOCOMMERCE_VERSION' ) ) {
+
 			$this->vendors_scripts['WOOCOMMERCE'] = true;
 			$this->disabled_entities[]            = 'product';
 			$this->disabled_entities[]            = 'product_tag';
 			$this->disabled_entities[]            = 'product_cat';
 			$this->disabled_entities[]            = 'shop_order';
 			$this->disabled_entities[]            = 'shop_coupon';
+			
+			/**
+			 * Gathering Woocommerce's post types in one place
+			 * @since 1.4.3
+			 */ 
+			$this->disabled_entities[] 			  = 'product_variation';
+			$this->disabled_entities[] 			  = 'shop_order_refund';
+			$this->disabled_entities[] 			  = 'shop_webhook';	
+
 		}
 
 		if ( defined( 'AIOSEOP_VERSION' ) ) {
@@ -224,9 +239,15 @@ class WPGlobus {
 			$this->enabled_pages[] = 'options-general.php';
 			$this->enabled_pages[] = 'widgets.php';
 			$this->enabled_pages[] = 'customize.php';
+
+			/**
+			 * WPGlobus clean page
+			 * @since 1.4.3
+			 */
+			$this->enabled_pages[] = self::PAGE_WPGLOBUS_CLEAN;			
 		
 			add_action( 'admin_body_class', array( $this, 'on_add_admin_body_class' ) );
-
+		
 			add_action( 'wp_ajax_' . __CLASS__ . '_process_ajax', array( $this, 'on_process_ajax' ) );
 
 			require_once 'options/class-wpglobus-options.php';
@@ -503,10 +524,16 @@ class WPGlobus {
 	public function on_process_ajax() {
 
 		$ajax_return = array();
-
 		$order = $_POST['order'];
 
 		switch ( $order['action'] ) :
+			case 'clean':
+			case 'wpglobus-reset':
+			
+				require_once 'admin/class-wpglobus-clean.php';
+				WPGlobus_Clean::process_ajax( $order );
+			
+				break;
 			case 'save_post_meta_settings':
 				$settings = (array) get_option( WPGlobus::Config()->option_post_meta_settings );
 
@@ -1192,6 +1219,10 @@ class WPGlobus {
 				
 				$page_action = 'wpglobus_options';
 		
+			} else if ( in_array( $page, array( self::PAGE_WPGLOBUS_CLEAN ) ) ) {
+			
+				$page_action = 'wpglobus_clean';
+			
 			} else {
 
 				$page_action = $page;
@@ -1250,7 +1281,7 @@ class WPGlobus {
 			 *
 			 * @param array $page_data_values An array with custom data or null.
 			 * @param string $page_data_key Data key. @since 1.3.0
-			 */			
+			 */
 			$page_data_values = apply_filters( 'wpglobus_localize_custom_data', $page_data_values, $page_data_key );			
 			
 			wp_localize_script(
@@ -1487,8 +1518,30 @@ class WPGlobus {
 				'wpglobus_addons'
 			)
 		);
+		
+		add_submenu_page(
+			null,
+			'',
+			'',
+			'administrator',
+			self::PAGE_WPGLOBUS_CLEAN,
+			array(
+				$this,
+				'wpglobus_clean'
+			)
+		);		
 	}
 
+	/**
+	 * Include file for WPGlobus clean page
+	 * @since 1.4.3
+	 * @return void
+	 */
+	function wpglobus_clean() {
+		require_once 'admin/class-wpglobus-clean.php';
+		WPGlobus_Clean::controller();
+	}
+	
 	/**
 	 * Include file for WPGlobus about page
 	 * @return void
@@ -2551,7 +2604,7 @@ class WPGlobus {
 				$return =
 					$language == self::Config()->default_language ? WPGlobus::RETURN_IN_DEFAULT_LANGUAGE : WPGlobus::RETURN_EMPTY; ?>
 
-				<input type="text" class="regular-text wpglobus-blogname"
+				<input type="text" class="regular-text wpglobus-blogname wpglobus-translatable"
 				       value="<?php echo WPGlobus_Core::text_filter( $blogname, $language, $return ); ?>"
 				       id="blogname-<?php echo $language; ?>" name="blogname-<?php echo $language; ?>"
 				       data-language="<?php echo $language; ?>"
@@ -2566,7 +2619,7 @@ class WPGlobus {
 				$return =
 					$language == self::Config()->default_language ? WPGlobus::RETURN_IN_DEFAULT_LANGUAGE : WPGlobus::RETURN_EMPTY; ?>
 
-				<input type="text" class="regular-text wpglobus-blogdesc"
+				<input type="text" class="regular-text wpglobus-blogdesc wpglobus-translatable"
 				       value="<?php echo WPGlobus_Core::text_filter( $blogdesc, $language, $return ); ?>"
 				       id="blogdescription-<?php echo $language; ?>" name="blogdescription-<?php echo $language; ?>"
 				       data-language="<?php echo $language; ?>"

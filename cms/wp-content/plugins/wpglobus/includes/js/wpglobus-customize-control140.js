@@ -194,7 +194,7 @@ jQuery(document).ready(function ($) {
 			});
 			
 			if (dis) return;
-			
+
 			var control = wp.customize.control.instance( obj );
 			
 			/** check for obj is widget */
@@ -231,6 +231,7 @@ jQuery(document).ready(function ($) {
 					api.controlInstances[obj]['element']  = element; 
 					api.controlInstances[obj]['setting']  = control.setting(); 
 					api.controlInstances[obj]['selector'] = e; 
+					api.controlInstances[obj]['controlSelector'] = control.selector; 
 					api.controlInstances[obj]['type'] 	  = ''; 
 
 					$.each( WPGlobusCustomize.setLinkBy, function( i, piece ) {
@@ -253,9 +254,14 @@ jQuery(document).ready(function ($) {
 							api.controlInstances[obj]['type'] = 'text';
 						}	
 					}
-					
+
 					element.val( WPGlobusCore.TextFilter( api.controlInstances[obj]['setting'], WPGlobusCoreData.language, 'RETURN_EMPTY' ) );
 					element.addClass( 'wpglobus-customize-control' );
+					
+					/** use control.selector instead of element.parents('li').attr('id') to get id parent li element */
+					//element.attr( 'data-wpglobus-customize-control', element.parents('li').attr('id').replace( 'customize-control-', '') );
+					element.attr( 'data-wpglobus-customize-control', api.controlInstances[obj]['controlSelector'].replace( '#customize-control-', '') );
+						
 					if ( api.controlInstances[obj]['type'] == 'link' ) {
 						api.controlInstances[obj]['setting'] = api.convertString( element[0].defaultValue );	
 					};
@@ -344,9 +350,18 @@ jQuery(document).ready(function ($) {
 				$( document ).triggerHandler( 'wpglobus_cusomize_control_language', [ WPGlobusCoreData.language ] );
 				
 				$( '.wpglobus-customize-control' ).each( function(i,e){
-					var $e = $(e), inst = $e.data( 'customize-setting-link' );
+					var $e = $(e), 
+						inst = $e.data( 'customize-setting-link' );
+					
 					if ( 'undefined' === typeof WPGlobusCustomize.controlInstances[inst] ) {
-						return;		
+						/** 
+						 * try get control element from attribute data-wpglobus-customize-control
+						 * for example @see Blink theme, customize control element footer-text instead of blink_footer-text
+						 */
+						inst = $e.data( 'wpglobus-customize-control' );
+						if ( 'undefined' === typeof WPGlobusCustomize.controlInstances[inst] ) {
+							return;	
+						}							
 					}
 					if ( $e.hasClass( 'wpglobus-control-link' ) ) {
 						var t = api.getTranslations( WPGlobusCustomize.controlInstances[inst].setting );
@@ -465,7 +480,14 @@ jQuery(document).ready(function ($) {
 					inst = $t.data( 'customize-setting-link' );
 					
 				if ( 'undefined' === typeof WPGlobusCustomize.controlInstances[inst] ) {
-					return;		
+					/** 
+					 * try get control element from attribute data-wpglobus-customize-control
+					 * for example @see Blink theme, customize control element footer-text instead of blink_footer-text
+					 */
+					inst = $t.data( 'wpglobus-customize-control' );
+					if ( 'undefined' === typeof WPGlobusCustomize.controlInstances[inst] ) {
+						return;	
+					}	
 				}
 
 				if ( WPGlobusCustomize.controlInstances[inst]['type'] == 'link' ) {

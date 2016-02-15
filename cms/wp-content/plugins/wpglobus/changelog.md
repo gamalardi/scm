@@ -2,6 +2,23 @@
 
 ## Changelog ##
 
+### 1.4.4 ###
+
+* FIXED:
+	* In Customizer JS: use `control.selector` to get the ID of parent element correctly.
+	* Additional social network names elements disabled by default in Customizer.
+	
+### 1.4.3 ###
+
+* ADDED:
+	* Clean-up Tool to remove all languages except for the main one.
+
+### 1.4.2 ###
+
+* FIXED:
+	* Case `data-customize-setting-link` not matching the element name in `wp.customize.control.instance`.
+	* Some CSS improvements.
+	
 ### 1.4.1 ###
 
 * FIXED:

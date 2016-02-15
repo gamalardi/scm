@@ -4915,3 +4915,7 @@ h4 {
       color: #fff;
       background: #3b3d70;
       text-decoration: none !important; }
+
+.sidebar {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em; }

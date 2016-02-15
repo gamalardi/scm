@@ -44,28 +44,16 @@ function scm_menu() {
 function scm_language() {
     include 'template/language.php';
 }
-function scm_sidebar() {
-    $scmUrl_en = array(
-            '',
-            'corporate-governance', 
-            'investor-relation', 
-            'general-information', 
-            'activity', 
-            'investor-relation/general-meeting-of-share-holders',
-            'investor-relation/financial-information',
-            'investor-relation/annual-report',
-            'investor-relation/investor-materials');
-
-    foreach ($scmUrl_en as $url) {
-        if (( $_SERVER['REQUEST_URI'] == '/scm/'. $url .'/' ) || ($_SERVER['REQUEST_URI'] == '/scm/id/'. $url .'/' )) {
-             //run the query to list the pros
-            include 'template/sidebar.php';
-        }
-    }
-}
-
 @ini_set( 'upload_max_size' , '64M' );
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'max_execution_time', '300' );
+
+    register_sidebar(array(
+            'name' => 'Sidebar',
+            'before_widget' => '<div>',
+            'after_widget' => '</div>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+    ));
 
 ?>
