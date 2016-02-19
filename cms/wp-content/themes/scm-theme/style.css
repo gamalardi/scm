@@ -2359,6 +2359,12 @@ and change the color when hover */
   .scroll-to-top:hover {
     background: #3b3d70; }
 
+/* remove default theme margin for .page-content
+ * default value: 1.2em 0; 
+ */
+.page-content {
+  margin: 1.2em auto !important; }
+
 /* *********************************** */
 /* Utility class */
 /* *********************************** */

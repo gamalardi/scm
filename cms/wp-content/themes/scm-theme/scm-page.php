@@ -15,9 +15,9 @@
                 <!-- call this function to display the featured image -->
                 <?php
                    if ( wp_is_mobile()) {
-                        the_post_thumbnail('sparkling-featured', array( 'class' => 'img-responsive fullwidth'));
+                        the_post_thumbnail('featuredImage_mobile', array( 'class' => 'img-responsive fullwidth'));
                    } else {
-                        the_post_thumbnail( 'full', array( 'class' => 'img-responsive fullwidth') ); 
+                        the_post_thumbnail( 'featuredImage_desktop', array( 'class' => 'img-responsive fullwidth') ); 
                 } ?>
             </div>
         </div>

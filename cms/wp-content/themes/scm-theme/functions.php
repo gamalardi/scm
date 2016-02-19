@@ -33,6 +33,14 @@ add_theme_support( 'post-thumbnails' );
 /* increase the limit of srcset
  * more info: http://wordpress.stackexchange.com/questions/211368/wp-4-4-responsive-images-browser-choosing-the-wrong-one
  */
+
+add_image_size( 'featuredImage_mobile', 768, 600, true );
+add_image_size( 'featuredImage_desktop', 1920, 600, true );
+
+
+/* increase the limit of srcset
+ * more info: http://wordpress.stackexchange.com/questions/211368/wp-4-4-responsive-images-browser-choosing-the-wrong-one
+ */
 add_filter('max_srcset_image_width', function($max_srcset_image_width, $size_array){
     return 2000;
 }, 10, 2);

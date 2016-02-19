@@ -19,6 +19,12 @@ and change the color when hover */
     }
 }
 
+/* remove default theme margin for .page-content
+ * default value: 1.2em 0; 
+ */
+.page-content {
+	margin: 1.2em auto !important;
+}
 // commnent out for now
 // @include media-breakpoint-up(sm) {
 //   html {

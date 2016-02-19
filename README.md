@@ -1,2 +1,1 @@
-# scm
-new website for SCM
+'One does not simply walk into Mordor'
